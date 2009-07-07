@@ -95,6 +95,10 @@
 
   (tabbar-mode t)
 
+  (add-to-list 'exec-path "/opt/local/bin")
+  (setq ispell-program-name "aspell")
+  (setenv "ASPELL_CONF" nil)
+  
   (normal-erase-is-backspace-mode t)
   (setq default-frame-alist (quote ((menu-bar-lines . 1) 
 				    (background-color . "#000000") 
@@ -238,7 +242,7 @@
             (setq yas/trigger-key [tab])
             (define-key yas/keymap [tab] 'yas/next-field-group)
             ;; flyspell mode to spell check everywhere
-            ;; (flyspell-mode 1)
+            (flyspell-mode 1)
             ))
 
 
