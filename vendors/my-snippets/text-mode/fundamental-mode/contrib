@@ -1,0 +1,6 @@
+#contributor : wyrdvans <jason.schadel@gmail.com>
+#name : #contributor ...
+#group : yasnippets
+# --
+#contributor : ${1:wyrdvans} <${2:jason.schadel@gmail.com}>
+$0

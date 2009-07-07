@@ -1,0 +1,6 @@
+#contributor : wyrdvans <jason.schadel@gmail.com>
+#name : #name ...
+#group : yasnippets
+# --
+#name : $1
+$0

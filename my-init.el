@@ -177,8 +177,8 @@
 (require 'remember)
 (org-remember-insinuate)
 
-;; (setq org-remember-store-without-prompt t)
-;; (setq org-remember-default-headline "Tasks")
+(setq org-remember-store-without-prompt t)
+(setq org-remember-default-headline "Tasks")
 ;; 3 remember templates for TODO tasks, Notes, and Phone calls
 (setq org-remember-templates (quote (("todo" ?t "* TODO %?
   %u
@@ -234,9 +234,9 @@
 (add-hook 'org-mode-hook
           (lambda ()
             ;; yasnippet
-            ;; (make-variable-buffer-local 'yas/trigger-key)
-            ;; (setq yas/trigger-key [tab])
-            ;; (define-key yas/keymap [tab] 'yas/next-field-group)
+            (make-variable-buffer-local 'yas/trigger-key)
+            (setq yas/trigger-key [tab])
+            (define-key yas/keymap [tab] 'yas/next-field-group)
             ;; flyspell mode to spell check everywhere
             ;; (flyspell-mode 1)
             ))
