@@ -1,0 +1,6 @@
+#contributor : wyrdvans <jason.schadel@gmail.com>
+#name : <?xml version="..."?>
+#group : Cruise Control
+# --
+<?xml version="$1"?>
+$0

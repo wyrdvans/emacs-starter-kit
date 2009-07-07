@@ -264,6 +264,12 @@
 (yas/load-directory (concat dotfiles-dir "vendors/yasnippets/snippets"))
 (yas/load-directory (concat dotfiles-dir "vendors/my-snippets"))
 
+;;-----
+;; php-mode
+;; - http://php-mode.sourceforge.net/
+;;-----
+(require 'php-mode)
+
 ;;----------------------------------------------------------------------
 ;; Custom-set-faces
 ;;----------------------------------------------------------------------
