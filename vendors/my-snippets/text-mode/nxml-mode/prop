@@ -1,0 +1,6 @@
+#contributor : wyrdvans <jason.schadel@gmail.com>
+#name : property ...
+#group : Cruise Control
+# --
+<property name="$1" value="$2" />
+$0

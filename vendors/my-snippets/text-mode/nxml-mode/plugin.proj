@@ -1,0 +1,27 @@
+#contributor : wyrdvans <jason.schadel@gmail.com>
+#name : <plugin name="project.kind...."
+#group : Cruise Control
+# --
+<plugin name="project.kind.$1" classname="net.sourceforge.cruisecontrol.ProjectConfig">
+        <listeners>
+                $2
+        </listeners>
+        <bootstrappers>
+                $3
+        </bootstrappers>
+        <modificationset>
+                $4
+        </modificationset>
+        <schedule interval="\${default.schedule.interval}">
+                $5
+        </schedule>
+        <log>
+                <merge />
+                <delete />
+                <deleteartifacts />
+        </log>
+        <publishers>
+                $6
+        </publishers>
+</plugin
+$0
