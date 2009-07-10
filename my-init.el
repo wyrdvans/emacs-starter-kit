@@ -23,6 +23,8 @@
 ;; Custom functions, keybindings and aliases
 ;;----------------------------------------------------------------------
 
+(add-to-list 'auto-mode-alist '("\\.alias\\(rc\\|es\\)$" . sh-mode))
+
 ;;-----
 ;; Keybindings
 ;;-----
@@ -35,6 +37,12 @@
 (global-set-key (kbd "<f6> e") (lambda ()
                                  (interactive)
                                  (find-file (concat dotfiles-dir "my-init.el"))))
+(global-set-key (kbd "<f6> z e") (lambda ()
+                                   (interactive)
+                                   (find-file "~/.zshenv")))
+(global-set-key (kbd "<f6> z r") (lambda ()
+                                   (interactive)
+                                   (find-file "~/.zshrc")))
 
 (global-set-key (kbd "<f7> l") 'linum-mode)
 (global-set-key (kbd "<f7> g") 'geben)

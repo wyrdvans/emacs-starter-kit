@@ -1,0 +1,7 @@
+#contributor : wyrdvans <jason.schadel@gmail.com>
+#name : <project ... </project>
+#group : Ant
+# --
+<project $1default="build">
+$0
+</project>

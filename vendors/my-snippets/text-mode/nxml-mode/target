@@ -1,0 +1,7 @@
+#contributor : wyrdvans <jason.schadel@gmail.com>
+#name : <target ... </target>
+#group : Ant
+# --
+<target name="$1" depends="$2" description="$3">
+$0
+</target> 
