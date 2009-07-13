@@ -24,6 +24,8 @@
 ;;----------------------------------------------------------------------
 
 (add-to-list 'auto-mode-alist '("\\.alias\\(rc\\|es\\)$" . sh-mode))
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+(add-hook 'log-edit-mode-hook (lambda () (auto-fill-mode nil)))
 
 ;;-----
 ;; Keybindings
@@ -109,13 +111,13 @@
   (add-to-list 'exec-path "/opt/local/bin")
   (setq ispell-program-name "aspell")
   (setenv "ASPELL_CONF" nil)
-  
+
   (normal-erase-is-backspace-mode t)
-  (setq default-frame-alist (quote ((menu-bar-lines . 1) 
-				    (background-color . "#000000") 
+  (setq default-frame-alist (quote ((menu-bar-lines . 1)
+				    (background-color . "#000000")
 				    (background-mode . dark)
 				    (border-color . "black")
-				    (cursor-color . "#ff0000") 
+				    (cursor-color . "#ff0000")
 				    (foreground-color . "#dbdbdb")
 				    (mouse-color . "black")
 				    (tool-bar-lines . 0)
@@ -144,10 +146,12 @@
 ;; -Patch for xml-rpc.el on emacs23 - http://savannah.nongnu.org/bugs/download.php?file_id=17263
 ;;-----
 (require 'trac-wiki)
-(trac-wiki-define-project "aweber-trac" "https://trac/trac" "jasons")
+(trac-wiki-define-project "aweber-trac" "https://trac.colo.lair/trac" "jasons")
 (autoload 'trac-wiki "trac-wiki" "Trac wiki editing entry-point." t)
 ;;; - start orgstruct minor mode when trac-wiki is loaded.
-(add-hook 'trac-wiki-mode-hook 'turn-on-orgstruct)
+(add-hook 'trac-wiki-mode-hook (lambda ()
+                                 ('turn-on-orgstruct)
+                                 (auto-fill-mode 0)))
 
 ;;-----
 ;; Org mode
@@ -216,10 +220,10 @@
 ; Targets start with the file name - allows creating level 1 tasks
 (setq org-refile-use-outline-path (quote file))
 
-; Targets complete in steps so we start with filename, TAB shows the next level of targets etc 
+; Targets complete in steps so we start with filename, TAB shows the next level of targets etc
 (setq org-outline-path-complete-in-steps t)
 
-(setq org-agenda-custom-commands 
+(setq org-agenda-custom-commands
       (quote (("P" "Projects" tags "/!PROJECT" ((org-use-tag-inheritance nil)))
               ("s" "Started Tasks" todo "STARTED" ((org-agenda-todo-ignore-with-date nil)))
               ("w" "Tasks waiting on something" tags "WAITING" ((org-use-tag-inheritance nil)))
