@@ -150,7 +150,7 @@
 (autoload 'trac-wiki "trac-wiki" "Trac wiki editing entry-point." t)
 ;;; - start orgstruct minor mode when trac-wiki is loaded.
 (add-hook 'trac-wiki-mode-hook (lambda ()
-                                 ('turn-on-orgstruct)
+                                 (turn-on-orgstruct)
                                  (auto-fill-mode 0)))
 
 ;;-----
@@ -258,6 +258,7 @@
             (define-key yas/keymap [tab] 'yas/next-field-group)
             ;; flyspell mode to spell check everywhere
             (flyspell-mode 1)
+            (auto-fill-mode 0)
             ))
 
 
