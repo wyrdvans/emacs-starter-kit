@@ -17,6 +17,7 @@
 
 (setq column-number-mode t)
 (setq pop-up-windows nil)
+(setq ns-pop-up-frames nil)
 (setq visible-bell nil)
 
 ;;----------------------------------------------------------------------
