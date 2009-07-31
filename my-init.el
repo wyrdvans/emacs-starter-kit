@@ -110,6 +110,8 @@
   (tabbar-mode t)
 
   (add-to-list 'exec-path "/opt/local/bin")
+  (add-to-list 'exec-path "/usr/local/bin")
+  (add-to-list 'exec-path "/usr/local/git/bin")
   (setq ispell-program-name "aspell")
   (setenv "ASPELL_CONF" nil)
 
@@ -272,10 +274,10 @@
 ;; yasnippets
 ;; - http://yasnippet.googlecode.com/svn/trunk/doc/index.html
 ;;-----
-(add-to-list 'load-path (concat dotfiles-dir "vendors/yasnippets"))
+(add-to-list 'load-path (concat dotfiles-dir "vendors/yasnippet"))
 (require 'yasnippet)
 (yas/initialize)
-(yas/load-directory (concat dotfiles-dir "vendors/yasnippets/snippets"))
+(yas/load-directory (concat dotfiles-dir "vendors/yasnippet/snippets"))
 (yas/load-directory (concat dotfiles-dir "vendors/my-snippets"))
 
 ;;-----
