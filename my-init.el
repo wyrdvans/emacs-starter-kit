@@ -8,6 +8,10 @@
 (setq uniquify-after-kill-buffer-p t)
 (setq uniquify-ignore-buffers-re "^\\*")
 
+;; modeline-posn minor mode
+(require 'modeline-posn)
+
+
 ;;; Appearance
 (add-to-list 'load-path (concat dotfiles-dir "vendors/color-theme"))
 (require 'color-theme)
@@ -285,6 +289,24 @@
 ;; - http://php-mode.sourceforge.net/
 ;;-----
 (require 'php-mode)
+
+;;-----
+;; espresso-mode
+;;-----
+(add-hook 'espresso-mode-hook
+          (lambda ()
+            (setq c-basic-offset 4)
+            ))
+
+;;-----
+;; python-mode
+;;-----
+(add-hook 'python-mode-hook
+          (lambda ()
+            (setq modelinepos-column-limit 79)
+            (column-number-mode 1)
+            (size-indication-mode 1)
+            ))
 
 ;;----------------------------------------------------------------------
 ;; Custom-set-faces
