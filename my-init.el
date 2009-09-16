@@ -113,11 +113,16 @@
 
   (tabbar-mode t)
 
+  (define-key global-map [ns-drag-file] 'ns-find-file)
+
   (add-to-list 'exec-path "/opt/local/bin")
   (add-to-list 'exec-path "/usr/local/bin")
   (add-to-list 'exec-path "/usr/local/git/bin")
   (setq ispell-program-name "aspell")
   (setenv "ASPELL_CONF" nil)
+
+  ;;; make window transparent
+  (set-frame-parameter (selected-frame) 'alpha '(85 85))
 
   (normal-erase-is-backspace-mode t)
   (setq default-frame-alist (quote ((menu-bar-lines . 1)
