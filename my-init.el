@@ -54,7 +54,7 @@
 (global-set-key (kbd "<f7> l") 'linum-mode)
 (global-set-key (kbd "<f7> g") 'geben)
 (global-set-key (kbd "<f7> t") 'trac-wiki)
-(global-set-key (kbd "<f7> w") 'set-truncate-lines)
+(global-set-key (kbd "<f7> w") 'toggle-truncate-lines)
 (global-set-key (kbd "<f8>") 'org-cycle-agenda-files)
 ;; (global-set-key (kbd "<f9> b") 'bbdb)
 ;; (global-set-key (kbd "<f9> c") 'calendar)
@@ -271,6 +271,7 @@
             ;; flyspell mode to spell check everywhere
             (flyspell-mode 1)
             (auto-fill-mode 0)
+            (setq truncate-lines nil)
             ))
 
 
@@ -327,3 +328,5 @@
  '(font-lock-string-face ((t (:foreground "LightSalmon" :weight bold))))
  '(font-lock-type-face ((t (:foreground "PaleGreen" :weight bold))))
  '(font-lock-variable-name-face ((t (:foreground "LightGoldenrod" :weight bold)))))
+
+;;(server-start)
