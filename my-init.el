@@ -284,10 +284,8 @@
 ;; yasnippets
 ;; - http://yasnippet.googlecode.com/svn/trunk/doc/index.html
 ;;-----
-(add-to-list 'load-path (concat dotfiles-dir "vendors/yasnippet"))
 (require 'yasnippet)
 (yas/initialize)
-(yas/load-directory (concat dotfiles-dir "vendors/yasnippet/snippets"))
 (yas/load-directory (concat dotfiles-dir "vendors/my-snippets"))
 
 ;;-----
