@@ -113,6 +113,7 @@
 
   (tabbar-mode t)
 
+  (menu-bar-mode t)
   (define-key global-map [ns-drag-file] 'ns-find-file)
 
   (add-to-list 'exec-path "/opt/local/bin")
