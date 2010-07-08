@@ -9,7 +9,6 @@
 (autoload 'trac-wiki "trac-wiki" "Trac wiki editing entry-point." t)
 ;;; - start orgstruct minor mode when trac-wiki is loaded.
 (add-hook 'trac-wiki-mode-hook (lambda ()
-                                 (turn-on-orgstruct)
                                  (auto-fill-mode 0)))
 
 (provide 'init_trac_wiki)

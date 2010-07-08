@@ -2,7 +2,7 @@
 (add-to-list 'load-path (concat dotfiles-dir "vendors"))
 
 ;; Uniquify
-(require 'uniquify)
+;;(require 'uniquify)
 (setq uniquify-buffer-name-style 'reverse)
 (setq uniquify-separator "/")
 (setq uniquify-after-kill-buffer-p t)
@@ -23,6 +23,7 @@
 (setq pop-up-windows nil)
 (setq ns-pop-up-frames nil)
 (setq visible-bell nil)
+(setq resize-mini-windows t) ;; Allow minibuffer to grow and shrink at will
 
 ;;----------------------------------------------------------------------
 ;; Custom functions, keybindings and aliases
@@ -152,13 +153,12 @@
   (console-only-settings)
 )
 
-(load-library "init_python_mode")
 (load-library "init_trac_wiki")
-(load-library "init_rope")
 (load-library "init_auto_complete")
-(load-library "init_emacs_tiny_tools")
+;; (load-library "init_emacs_tiny_tools")
 (load-library "init_yasnippets")
 (load-library "init_org_mode")
+(load-library "init_python_mode")
 
 ;;-----
 ;; Periodic commands
@@ -190,10 +190,9 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  '(flymake-errline ((((class color)) (:background "DarkRed"))))
+ '(flymake-warnline ((((class color)) (:background "DarkYellow"))))
  '(font-lock-comment-face ((t (:foreground "chocolate1" :weight bold))))
  '(font-lock-keyword-face ((t (:foreground "Cyan1" :weight bold))))
  '(font-lock-string-face ((t (:foreground "LightSalmon" :weight bold))))
  '(font-lock-type-face ((t (:foreground "PaleGreen" :weight bold))))
  '(font-lock-variable-name-face ((t (:foreground "LightGoldenrod" :weight bold)))))
-
-;;(server-start)
