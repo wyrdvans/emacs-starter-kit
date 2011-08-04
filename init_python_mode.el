@@ -11,39 +11,7 @@
 ;;;;;
 ;; Integrate Rope and yasnippet into auto-complete
 ;;;;;
-(defun prefix-list-elements (list prefix)
-   (let (value)
-     (nreverse
-      (dolist (element list value)
-        (setq value (cons (format "%s%s" prefix element) value))))))
-
-(defvar ac-source-rope
-  '((candidates
-     . (lambda ()
-         (prefix-list-elements (rope-completions) ac-target))))
-  "Source for Rope")
-
-(defun ac-python-candidate ()
-  "Python `ac-candidates-function'"
-  (let (candidates)
-    (dolist (source ac-sources)
-      (if (symbolp source)
-          (setq source (symbol-value source)))
-      (let* ((ac-limit (or (cdr-safe (assq 'limit source)) ac-limit))
-             (requires (cdr-safe (assq 'requires source)))
-             cand)
-        (if (or (null requires)
-                (>= (length ac-target) requires))
-            (setq cand
-                  (delq nil
-                        (mapcar (lambda (candidate)
-                                  (propertize candidate 'source source))
-                                (funcall (cdr (assq 'candidates source)))))))
-        (if (and (> ac-limit 1)
-                 (> (length cand) ac-limit))
-            (setcdr (nthcdr (1- ac-limit) cand) nil))
-        (setq candidates (append candidates cand))))
-    (delete-dups candidates)))
+(ac-ropemacs-setup)
 
 ;;;;;
 ;; setup pycomplexity
@@ -96,16 +64,16 @@
             (size-indication-mode 1)
             ;; autocomplete additions
             (auto-complete-mode 1)
-            (set (make-local-variable 'ac-dwim) nil)
-            (set (make-local-variable 'ac-sources)
-                 (append ac-sources '(ac-source-rope) '(ac-source-yasnippet)))
-            (set (make-local-variable 'ac-candidates-function) 'ac-python-candidate)
-            (set (make-local-variable 'ac-auto-start) 1)
+            (add-to-list 'ac-sources 'ac-source-ropemacs)
             ;; pycomplexity additions
-            (pycomplexity-mode)
+            ;; (pycomplexity-mode)
             (linum-mode)
             ;; lint checking additions
             (flymake-mode)
             ))
+
+;; Set Python interpreter
+;(setq python-python-command "ipython")
+;(require 'ipython)
 
 (provide 'init_python_mode)

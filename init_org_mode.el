@@ -114,6 +114,10 @@
 ; For tag searches ignore tasks with scheduled and deadline dates
 (setq org-agenda-tags-todo-honor-ignore-options t)
 
+;; Link Grabber setup
+(add-to-list 'load-path (concat dotfiles-dir "vendors/org-mode/contrib/lisp"))
+(require 'org-mac-link-grabber)
+
 ;; Make TAB the yas trigger key in the org-mode-hook and turn on flyspell mode
 (add-hook 'org-mode-hook
           (lambda ()
@@ -125,6 +129,15 @@
             (flyspell-mode 1)
             (auto-fill-mode 0)
             (setq truncate-lines nil)
+            (define-key org-mode-map (kbd "C-c g") 'omlg-grab-link)
             ))
+
+;; Mobileorg setup
+;; Set to the location of your Org files on your local system
+(setq org-directory "~/Documents/org-files")
+;; Set to the name of the file where new notes will be stored
+(setq org-mobile-inbox-for-pull "~/Documents/org-files/refile.org")
+;; Set to <your Dropbox root directory>/MobileOrg.
+(setq org-mobile-directory "~/Dropbox/MobileOrg")
 
 (provide 'init_org_mode)
