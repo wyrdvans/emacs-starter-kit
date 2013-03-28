@@ -13,3 +13,9 @@
 [submodule "vendors/flymake-python"]
 	path = vendors/flymake-python
 	url = http://github.com/akaihola/flymake-python.git
+[submodule "vendors/coffee-mode"]
+	path = vendors/coffee-mode
+	url = git://github.com/defunkt/coffee-mode.git
+[submodule "vendors/puppet-flymake"]
+	path = vendors/puppet-flymake
+	url = https://github.com/grimradical/puppet-flymake.git

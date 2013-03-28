@@ -24,6 +24,7 @@
 (setq ns-pop-up-frames nil)
 (setq visible-bell nil)
 (setq resize-mini-windows t) ;; Allow minibuffer to grow and shrink at will
+(setq-default fill-column 80)
 
 ;;----------------------------------------------------------------------
 ;; Custom functions, keybindings and aliases
@@ -161,7 +162,11 @@
 ;; (load-library "init_emacs_tiny_tools")
 (load-library "init_yasnippets")
 (load-library "init_org_mode")
+(load-library "init_puppet_mode")
+(load-library "init_coffee_script_mode")
 (load-library "init_python_mode")
+(load-library "init_chef_mode")
+;; (load-library "init_markdown_mode")
 
 ;;-----
 ;; Periodic commands

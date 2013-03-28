@@ -115,8 +115,8 @@
 (setq org-agenda-tags-todo-honor-ignore-options t)
 
 ;; Link Grabber setup
-(add-to-list 'load-path (concat dotfiles-dir "vendors/org-mode/contrib/lisp"))
-(require 'org-mac-link-grabber)
+;;(add-to-list 'load-path (concat dotfiles-dir "vendors/org-mode/contrib/lisp"))
+;;(require 'org-mac-link-grabber)
 
 ;; Make TAB the yas trigger key in the org-mode-hook and turn on flyspell mode
 (add-hook 'org-mode-hook

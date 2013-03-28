@@ -2,16 +2,16 @@
 ;; Setup pymacs and rope
 ;;;;;
 (add-to-list 'load-path (concat dotfiles-dir "vendors/pymacs"))
-(require 'pymacs)
-(pymacs-load "ropemacs" "rope-")
-(setq ropemacs-enable-autoimport t
-      ropemacs-guess-project t
-      )
+;; (require 'pymacs)
+;; (pymacs-load "ropemacs" "rope-")
+;; (setq ropemacs-enable-autoimport t
+;;       ropemacs-guess-project t
+;;       )
 
 ;;;;;
 ;; Integrate Rope and yasnippet into auto-complete
 ;;;;;
-(ac-ropemacs-setup)
+;; (ac-ropemacs-setup)
 
 ;;;;;
 ;; setup pycomplexity
